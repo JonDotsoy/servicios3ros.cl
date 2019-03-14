@@ -1,0 +1,36 @@
+{
+  "name": "servicios3ros.cl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "vscode": "^1.32.1",
+    "node": "11.11.0",
+    "npm": "6.7.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "now-build": "next build && next export -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/servicios3ros.cl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/servicios3ros.cl/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/servicios3ros.cl#readme",
+  "dependencies": {
+    "default": "^0.1.1"
+  },
+  "devDependencies": {
+    "next": "^8.0.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}

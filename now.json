@@ -1,0 +1,9 @@
+{
+  "name": "servicios3ros",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}
