@@ -1,5 +1,6 @@
 {
   "name": "servicios3ros.cl",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,20 +21,22 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/JonDotsoy/servicios3ros.cl/issues"
   },
   "homepage": "https://github.com/JonDotsoy/servicios3ros.cl#readme",
   "dependencies": {
-    "@zeit/next-typescript": "^1.1.1"
+    "@zeit/next-typescript": "^1.1.1",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/next": "^8.0.1",
+    "@types/react": "^16.8.8",
     "next": "^8.0.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "tslint": "^5.14.0",
-    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.3.3333"
   }
 }
