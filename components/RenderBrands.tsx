@@ -1,8 +1,17 @@
 import React from "react";
+import styled from 'styled-components';
+
+const ContentBrands = styled.div`
+  overflow-x: auto;
+`;
+
+const ContentInnerBrands = styled.div`
+  min-width: 1100px;
+`;
 
 export function RenderBrands() {
-  return <div className="content-brands">
-    <div className="inner-content">
+  return <ContentBrands className="content-brands">
+    <ContentInnerBrands className="inner-content">
       <div className="brand"><img src="/static/img/aura.jpg" /></div>
       <div className="brand"><img src="/static/img/broadspectrum.jpg" /></div>
       <div className="brand"><img src="/static/img/epiroc.jpg" /></div>
@@ -13,6 +22,6 @@ export function RenderBrands() {
       <div className="brand"><img src="/static/img/drager.brand.jpg" /></div>
       <div className="brand"><img src="/static/img/interexport.grand.jpg" /></div>
       <div className="brand"><img src="/static/img/santaelvira.brand.png" /></div>
-    </div>
-  </div>;
+    </ContentInnerBrands>
+  </ContentBrands>;
 }
