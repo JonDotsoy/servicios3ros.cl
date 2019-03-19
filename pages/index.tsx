@@ -77,7 +77,7 @@ export default () => {
           </div>
         </nav>
       </div>
-    </div>;
+    </div>
 
     <main className="billy box">
       <PortacountArticle />
