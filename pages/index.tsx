@@ -7,7 +7,7 @@ import { PortacountArticle } from "../components/PortacountArticle";
 import { MaquinariasArticle } from "../components/MaquinariasArticle";
 import { RRHHArticle } from "../components/RRHHArticle";
 import { schemaPage } from "../components/schemaPage";
-import styled from 'styled-components';
+import { ObrasCivilesArticle } from "../components/ObrasCivilesArticle";
 
 export default () => {
   const [cancell, setCancell] = useState(true);
@@ -68,6 +68,7 @@ export default () => {
             </div>
             <div className={classNames("collapse navbar-collapse", { cancell })} id="collapse-menu-top">
               <ul className="nav navbar-nav navbar-right">
+                <li><a href="#obrasciviles">Obras Civiles</a></li>
                 <li><a href="#portacount">Portacount</a></li>
                 <li><a href="#maquinarias">Arriendo de Maquinarias</a></li>
                 <li><a href="#rrhh">RRHH</a></li>
@@ -80,8 +81,9 @@ export default () => {
     </div>
 
     <main className="billy box">
-      <PortacountArticle />
+      <ObrasCivilesArticle />
       <RenderBrands />
+      <PortacountArticle />
       <MaquinariasArticle />
       <RRHHArticle />
     </main>

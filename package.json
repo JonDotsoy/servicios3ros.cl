@@ -36,6 +36,7 @@
     "@types/next": "^8.0.1",
     "@types/react": "^16.8.8",
     "@types/styled-components": "^4.1.12",
+    "babel-plugin-styled-components": "^1.10.0",
     "next": "^8.0.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",

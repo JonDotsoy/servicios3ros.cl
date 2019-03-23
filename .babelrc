@@ -2,5 +2,17 @@
   "presets": [
     "next/babel",
     "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": false,
+        "fileName": false,
+        "minify": true,
+        "pure": false
+      }
+    ]
   ]
 }
