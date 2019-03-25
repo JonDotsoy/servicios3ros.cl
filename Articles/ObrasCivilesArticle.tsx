@@ -23,7 +23,6 @@ export const ObrasCivilesArticle = () => {
 
           <Carousel height='67%'>
             <img className="img-responsive" src="/static/img/obrasciviles/WhatsApp Image 2019-03-25 at 14.51.59.jpeg" />
-            <img className="img-responsive" src="/static/img/obrasciviles/WhatsApp Image 2019-03-25 at 14.51.59(1).jpeg" />
             <img className="img-responsive" src="/static/img/obrasciviles/WhatsApp Image 2019-03-25 at 14.51.59(2).jpeg" />
             <img className="img-responsive" src="/static/img/obrasciviles/WhatsApp Image 2019-03-25 at 14.52.00.jpeg" />
           </Carousel>

@@ -19,7 +19,6 @@ export const ObrasVialesArticle = () => {
         <div className="text col-md-6">
           <Carousel>
             <img className="img-responsive" src="/static/img/obrasviales/20160218_165228.jpg" />
-            <img className="img-responsive" src="/static/img/obrasviales/20160215_125922.jpg" />
             <img className="img-responsive" src="/static/img/obrasviales/20160303_161050.jpg" />
             <img className="img-responsive" src="/static/img/obrasviales/eglo.jpg.w300h225.jpg" />
             {/* <img className="img-responsive" src="/static/img/obrasviales/carro.jpg.w300h225.jpg" /> */}

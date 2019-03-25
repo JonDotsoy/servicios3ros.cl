@@ -2,14 +2,14 @@ import Head from "next/head";
 import React, { useRef, useEffect } from "react";
 import { RenderBrands } from "../components/RenderBrands";
 import url from 'url';
-import { PortacountArticle } from "../components/PortacountArticle";
-import { MaquinariasArticle } from "../components/MaquinariasArticle";
-import { RRHHArticle } from "../components/RRHHArticle";
+import { PortacountArticle } from "../Articles/PortacountArticle";
+import { MaquinariasArticle } from "../Articles/MaquinariasArticle";
+import { RRHHArticle } from "../Articles/RRHHArticle";
 import { schemaPage } from "../components/schemaPage";
-import { ObrasCivilesArticle } from "../components/ObrasCivilesArticle";
+import { ObrasCivilesArticle } from "../Articles/ObrasCivilesArticle";
 import NavbarTop from "../components/NavbarTop";
 import { useMenu } from "../libs/useMenu";
-import { ObrasVialesArticle } from "../components/ObrasVialesArticle";
+import { ObrasVialesArticle } from "../Articles/ObrasVialesArticle";
 
 export default () => {
   const [{ topMenuOpen: cancell }, , soneMenuRef, { toggle_top_menu }] = useMenu();
