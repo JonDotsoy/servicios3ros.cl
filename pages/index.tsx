@@ -1,16 +1,17 @@
 import Head from "next/head";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { RenderBrands } from "../components/RenderBrands";
 import url from 'url';
-import classNames from 'classnames';
 import { PortacountArticle } from "../components/PortacountArticle";
 import { MaquinariasArticle } from "../components/MaquinariasArticle";
 import { RRHHArticle } from "../components/RRHHArticle";
 import { schemaPage } from "../components/schemaPage";
 import { ObrasCivilesArticle } from "../components/ObrasCivilesArticle";
+import NavbarTop, { useMenu } from "../components/NavbarTop";
+import { ObrasVialesArticle } from "../components/ObrasVialesArticle";
 
 export default () => {
-  const [cancell, setCancell] = useState(true);
+  const [{ topMenuOpen: cancell }, , soneMenuRef, { toggle_top_menu }] = useMenu();
   const navbarRef = useRef<HTMLElement>();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default () => {
         const navbarElm: HTMLElement = navbarRef.current;
 
         const hash = url.parse(event.newURL, true).hash;
-        const elmFound = hash && document.querySelector(hash);
+        const elmFound = hash && hash !== '#' && document.querySelector(hash);
 
         if (elmFound) {
           const offsetTopElmFound: number = elmFound.offsetTop;
@@ -35,7 +36,7 @@ export default () => {
   }, []);
 
   function toggleCancell() {
-    setCancell(e => !e);
+    toggle_top_menu();
   }
 
   return <>
@@ -56,25 +57,20 @@ export default () => {
       <meta name="msapplication-config" content="/static/img/favicons/browserconfig.xml"></meta>
       <meta name="theme-color" content="#ffffff"></meta>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPage) }}></script>
+      <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossOrigin="anonymous" />
       <link rel="stylesheet" href="/static/css/style.css"></link>
     </Head>
 
-    <div className="s3ros-nav-fixed">
+    <div ref={soneMenuRef} className="s3ros-nav-fixed">
       <div className="s3ros-nav-animation">
-        <nav className="nav navbar navbar-default animated-non-top">
+        <nav className="nav navbar navbar-default">
           <div className="container">
             <div ref={navbarRef} className="navbar-header">
               <button onClick={toggleCancell} className="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#collapse-menu-top" aria-expanded="true"><span className="sr-only">Toggle navigation</span><span className="icon-bar"></span><span className="icon-bar"></span><span className="icon-bar"></span></button><a className="navbar-brand s3ros-brand" href="#"><span className="title">Servicios3ros</span></a>
             </div>
-            <div className={classNames("collapse navbar-collapse", { cancell })} id="collapse-menu-top">
-              <ul className="nav navbar-nav navbar-right">
-                <li><a href="#obrasciviles">Obras Civiles</a></li>
-                <li><a href="#portacount">Portacount</a></li>
-                <li><a href="#maquinarias">Arriendo de Maquinarias</a></li>
-                <li><a href="#rrhh">RRHH</a></li>
-                <li><a id="click-contact" href="#contact">Contacto</a></li>
-              </ul>
-            </div>
+
+            <NavbarTop cancell={cancell}></NavbarTop>
+
           </div>
         </nav>
       </div>
@@ -83,6 +79,7 @@ export default () => {
     <main className="billy box">
       <ObrasCivilesArticle />
       <RenderBrands />
+      <ObrasVialesArticle />
       <PortacountArticle />
       <MaquinariasArticle />
       <RRHHArticle />

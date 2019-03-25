@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { isArray } from 'util';
 
 const ContainerNavigateCarousel = styled.div({
   marginTop: 10,
@@ -71,14 +72,26 @@ export const CarouselNavigate = ({ len, elmActive, onActive }) => {
 }
 
 export const Carousel = ({ children }) => {
-  const { elm, length, indexElm, setIndexElm } = useCarousel({ elms: children });
+  if (!children) return null;
+
+  if (Array.isArray(children)) {
+    const { elm, length, indexElm, setIndexElm } = useCarousel({ elms: children });
+
+    return <ContainerCarousel>
+      <Head>
+        {children.map((elm, i) => <link key={i} rel="preload" href={elm.props.src} as="image" />)}
+      </Head>
+
+      <SlideCarousel><BoxImage {...elm.props}></BoxImage></SlideCarousel>
+      <CarouselNavigate len={length} elmActive={indexElm} onActive={setIndexElm}></CarouselNavigate>
+    </ContainerCarousel>;
+  }
 
   return <ContainerCarousel>
     <Head>
-      {children.map((elm, i) => <link key={i} rel="preload" href={elm.props.src} as="image" />)}
+      <link rel="preload" href={children.props.src} as="image" />
     </Head>
 
-    <SlideCarousel><BoxImage {...elm.props}></BoxImage></SlideCarousel>
-    <CarouselNavigate len={length} elmActive={indexElm} onActive={setIndexElm}></CarouselNavigate>
+    <SlideCarousel><BoxImage {...children.props}></BoxImage></SlideCarousel>
   </ContainerCarousel>;
 }
