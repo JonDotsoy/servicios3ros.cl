@@ -7,7 +7,8 @@ import { MaquinariasArticle } from "../components/MaquinariasArticle";
 import { RRHHArticle } from "../components/RRHHArticle";
 import { schemaPage } from "../components/schemaPage";
 import { ObrasCivilesArticle } from "../components/ObrasCivilesArticle";
-import NavbarTop, { useMenu } from "../components/NavbarTop";
+import NavbarTop from "../components/NavbarTop";
+import { useMenu } from "../libs/useMenu";
 import { ObrasVialesArticle } from "../components/ObrasVialesArticle";
 
 export default () => {
@@ -77,9 +78,9 @@ export default () => {
     </div>
 
     <main className="billy box">
-      <ObrasCivilesArticle />
-      <RenderBrands />
       <ObrasVialesArticle />
+      <RenderBrands />
+      <ObrasCivilesArticle />
       <PortacountArticle />
       <MaquinariasArticle />
       <RRHHArticle />

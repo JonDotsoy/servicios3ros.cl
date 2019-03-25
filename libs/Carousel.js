@@ -29,8 +29,8 @@ const SlideCarousel = styled.div(props => ({
 }));
 
 const BoxImage = styled.div(props => ({
-  backgroundImage: `url(${props.src})`,
-  paddingBottom: '110%',
+  backgroundImage: `url("${props.src}")`,
+  paddingBottom: `${props.height || '110%'}`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
 }));
@@ -71,7 +71,7 @@ export const CarouselNavigate = ({ len, elmActive, onActive }) => {
   </ContainerNavigateCarousel>;
 }
 
-export const Carousel = ({ children }) => {
+export const Carousel = ({ children, ...props }) => {
   if (!children) return null;
 
   if (Array.isArray(children)) {
@@ -82,7 +82,7 @@ export const Carousel = ({ children }) => {
         {children.map((elm, i) => <link key={i} rel="preload" href={elm.props.src} as="image" />)}
       </Head>
 
-      <SlideCarousel><BoxImage {...elm.props}></BoxImage></SlideCarousel>
+      <SlideCarousel><BoxImage {...props} {...elm.props}></BoxImage></SlideCarousel>
       <CarouselNavigate len={length} elmActive={indexElm} onActive={setIndexElm}></CarouselNavigate>
     </ContainerCarousel>;
   }
@@ -92,6 +92,6 @@ export const Carousel = ({ children }) => {
       <link rel="preload" href={children.props.src} as="image" />
     </Head>
 
-    <SlideCarousel><BoxImage {...children.props}></BoxImage></SlideCarousel>
+    <SlideCarousel><BoxImage {...props} {...children.props}></BoxImage></SlideCarousel>
   </ContainerCarousel>;
 }
