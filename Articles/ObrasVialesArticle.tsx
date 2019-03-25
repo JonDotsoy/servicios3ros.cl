@@ -13,7 +13,7 @@ export const ObrasVialesArticle = () => {
       <div className="row">
 
         <div className="text col-md-6">
-          <p className="lead text-justify">Con nuestro equipo de especialistas trabajamos para entregar el mayor valor agregado a  nuestros proyectos. En SERVICIOS3ROS  trabajamos en proyectos de gran envergadura para hacer de las vías públicas, que la comunidad necesita.</p>
+          <p className="lead text-justify">En servicios3ros Contamos con un gran  equipo de especialistas para ejecutar los proyectos en obras viales.</p>
         </div>
 
         <div className="text col-md-6">

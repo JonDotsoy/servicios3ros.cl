@@ -15,8 +15,6 @@ export const ObrasCivilesArticle = () => {
 
           <p className="lead text-justify">En SERVICIOS3ROS nos encargamos de crear obras civiles con una gran capacidad técnica, profesional, para asumir proyectos de gran envergadura, encargados por concesionarias y entidades privadas en general, así como por organismos públicos y empresas del Estado. </p>
 
-          <p className="lead text-justify">Nuestro foco está en ofrecer el mejor servicio en nuestras obras, pensando el las mejores estrategias para poder ofrecer un mejor experiencia para los usuarios de nuestras obras.</p>
-
         </div>
 
         <div className="text col-md-6">
