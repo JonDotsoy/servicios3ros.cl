@@ -15,6 +15,8 @@ export const ObrasCivilesArticle = () => {
           <p className="lead text-justify">En SERVICIOS3ROS nos encargamos de crear obras civiles con una gran capacidad técnica, profesional, para asumir proyectos de gran envergadura, encargados por concesionarias y entidades privadas en general, así como por organismos públicos y empresas del Estado. </p>
         </div> */}
 
+        <div className="text col-md-3"></div>
+
         <div className="text col-md-6">
 
           <Carousel height='67%'>

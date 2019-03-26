@@ -11,6 +11,10 @@ import NavbarTop from "../components/NavbarTop";
 import { useMenu } from "../libs/useMenu";
 import { ObrasVialesArticle } from "../Articles/ObrasVialesArticle";
 
+const GMTID = 'GTM-5CX6KRM';
+
+const gtmScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',${JSON.stringify(GMTID)});`;
+
 export default () => {
   const [{ topMenuOpen: cancell }, , soneMenuRef, { toggle_top_menu }] = useMenu();
   const navbarRef = useRef<HTMLElement>();
@@ -60,7 +64,10 @@ export default () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPage) }}></script>
       <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossOrigin="anonymous" />
       <link rel="stylesheet" href="/static/css/style.css"></link>
+      <script dangerouslySetInnerHTML={{ __html: gtmScript.toString() }}></script>
     </Head>
+
+    <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GMTID}`} height="0" width="0" style={{ "display": "none", "visibility": "hidden" }}></iframe></noscript>
 
     <div ref={soneMenuRef} className="s3ros-nav-fixed">
       <div className="s3ros-nav-animation">
