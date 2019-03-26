@@ -3,6 +3,6 @@ const withTypescript = require('@zeit/next-typescript')
 module.exports = withTypescript({
   serverRuntimeConfig: {},
   publicRuntimeConfig: {
-    GMTID: 'AAAA',
+    GMTID: process.env.GMTID || 'GTM-5CX6KRM',
   },
 });
