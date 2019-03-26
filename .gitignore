@@ -156,3 +156,4 @@ $RECYCLE.BIN/
 
 out/
 dist/
+.tmp
