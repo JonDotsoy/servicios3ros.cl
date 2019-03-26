@@ -6,5 +6,8 @@
       "src": "package.json",
       "use": "@now/static-build"
     }
-  ]
+  ],
+  "env": {
+    "GMTID": "GTM-5CX6KRM"
+  }
 }
