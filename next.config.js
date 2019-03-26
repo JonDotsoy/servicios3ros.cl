@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `${__dirname}/.env`,
+});
 
 const withTypescript = require('@zeit/next-typescript')
 module.exports = withTypescript({
